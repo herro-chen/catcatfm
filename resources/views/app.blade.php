@@ -62,7 +62,7 @@
     <img src="/static/image/top.gif" id="back-to-top" alt="back to top">
 </body>
 <script>
-    var Home = 'http://localhost:8000/';
+    var Home = '{{ URL('/') }}';
 </script>
 <script src="//cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
