@@ -27,8 +27,8 @@
                     </div>
                 </div>
             </div>
+            @foreach($love_musics as $music)
             <div class="col-xs-6 col-sm-4 col-md-3 top-15">
-                @foreach($love_musics as $music)
                 <div class="user-back">
                     <a href="{{ URL("/music/{$music->music_id}") }}">
                         <img src="{{ $music->music_image }}" class="img-responsive">
@@ -38,8 +38,8 @@
                     </a>
                     <p class="text-center hide"><i class="fa fa-trash"></i></p>
                 </div>
-                @endforeach
             </div>
+            @endforeach
             <div class="text-right">
                 {!! $love_musics->render() !!}
             </div>
