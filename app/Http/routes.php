@@ -41,6 +41,11 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::group(['prefix' => 'user'], function () {
         Route::get('/', 'UserController@home');
+        Route::get('setting', ['middleware' => 'auth', 'uses' => 'UserController@setting']);
+        Route::post('setting', ['middleware' => 'auth', 'uses' => 'UserController@dosetting']);
+        Route::get('password', ['middleware' => 'auth', 'uses' => 'UserController@password']);
+        Route::post('password', ['middleware' => 'auth', 'uses' => 'UserController@dopassword']);
+
         Route::get('love/{source}/{collection_id}', 'UserController@love')->where(['source' => '[0-9]', 'collection_id'=> '[0-9]+']);
         Route::get('{name}', 'UserController@home');
         Route::get('{name}/home', 'UserController@home');

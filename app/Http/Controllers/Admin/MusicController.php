@@ -42,8 +42,7 @@ class MusicController extends BaseController
 			'music_name' => Input::get('music_name'),
 			'music_moods' => Input::get('music_moods'),
 			'music_text' => Input::get('music_text'),
-			'music_user' => Auth::user()->id,
-			'music_create' => time()
+			'music_user' => Auth::user()->id
 		];
 
 		$music = Music::create($music);

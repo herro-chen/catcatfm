@@ -8,8 +8,8 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link rel="icon" href="" />
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -22,28 +22,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">猫猫音乐电台</a>
+                <a class="navbar-brand" href="{{ URL('/') }}">猫猫音乐电台</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/music') }}">期 刊</a></li>
-                    <li><a href="{{ url('/song') }}">发 现</a></li>
-                    <li><a href="{{ url('/fm') }}">电 台</a></li>
+                    <li><a href="{{ URL('/music') }}">期 刊</a></li>
+                    <li><a href="{{ URL('/song') }}">发 现</a></li>
+                    <li><a href="{{ URL('/fm') }}">电 台</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">登 录</a></li>
-                    <li><a href="{{ url('/register') }}">注 册</a></li>
+                    <li><a href="{{ URL('/login') }}">登 录</a></li>
+                    <li><a href="{{ URL('/register') }}">注 册</a></li>
                     @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/user') }}">个人主页</a></li>
-                            <li><a href="">账号设置</a></li>
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>退出</a></li>
+                            <li><a href="{{ URL('/user') }}">个人主页</a></li>
+                            <li><a href="{{ URL('/user/setting') }}">账号设置</a></li>
+                            <li><a href="{{ URL('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>退出</a></li>
                         </ul>
                     </li>
                     @endif
@@ -54,7 +54,7 @@
     @yield('content')
     <div class="footer">
         <div class="container">
-            <a href="{{ url('/') }}" target="_black">猫猫 FM</a>
+            <a href="{{ URL('/') }}" target="_black">猫猫 FM</a>
         </div>
     </div>
 
@@ -64,7 +64,7 @@
 <script>
     var Home = '{{ URL('/') }}/';
 </script>
-<script src="//cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+<script src="/static/js/jquery-2.1.3.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
 @yield('javascript')
 </html>

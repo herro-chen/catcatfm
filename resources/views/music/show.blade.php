@@ -10,7 +10,7 @@
                     <p class="m-info">
                         <i class="fa fa-tags first"></i> {{ $music->music_moods }}
                         <i class="fa fa-microphone"></i>
-                        <a href="" target="_black">{{ $music->user->name }}</a>
+                        <a href="{{ URL("/user/{$music->user->name}/home") }}" target="_black">{{ $music->user->name }}</a>
                         <i class="fa fa-clock-o"></i> {{ $music->music_create }}
                         <i class="fa fa-heart-o heart-music cursor @if ($is_love) text-danger @endif" data-music="{{ $music->music_id }}"></i>
                         <span>{{ $loves }}</span>
@@ -24,12 +24,12 @@
                 <div class="row" style="margin-bottom: 20px;">
                     <div class="col-xs-6">
                         @if( $previous)
-                        <a href="/music/{{ $previous }}"><i class="fa fa-3x fa-arrow-circle-o-left"></i></a>
+                        <a href="{{ URL("/music/{$previous}") }}"><i class="fa fa-3x fa-arrow-circle-o-left"></i></a>
                         @endif
                     </div>
                     <div class="col-xs-6 text-right">
                         @if( $next)
-                        <a href="/music/{{ $next }}"><i class="fa fa-3x fa-arrow-circle-o-right"></i></a>
+                        <a href="{{ URL("/music/{$next}") }}"><i class="fa fa-3x fa-arrow-circle-o-right"></i></a>
                         @endif
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                             </span>
                             <p class="text-right">
                                 {{ $songs->song_authors  }}
-                                <a href="/song/{{ $songs->song_id  }}"><i class="fa fa-info-circle" title="查看歌曲详情"></i></a>
+                                <a href="{{ URL("/song/{$songs->song_id}") }}"><i class="fa fa-info-circle" title="查看歌曲详情"></i></a>
                                 <a href="" target="_black"><i class="fa fa-download" title="下载到本地"></i></a>
                                 <i data-song="{{ $songs->song_id  }}" class="fa fa-heart " title="加入我的收藏"></i>
                                 <i class="fa fa-play-circle"></i>
